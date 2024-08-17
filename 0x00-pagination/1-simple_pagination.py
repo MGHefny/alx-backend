@@ -11,17 +11,17 @@ def index_range(page, page_size):
     last = page * page_size
     return front, last
 
+
 class Server:
-    """Server class to paginate a database of popular baby names.
-    """
+    """Server class to paginate a database of popular baby names."""
+
     DATA_FILE = "Popular_Baby_Names.csv"
 
     def __init__(self):
         self.__dataset = None
 
     def dataset(self) -> List[List]:
-        """Cached dataset
-        """
+        """Cached dataset"""
         if self.__dataset is None:
             with open(self.DATA_FILE) as f:
                 reader = csv.reader(f)
@@ -31,4 +31,11 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
-            pass
+        """info pages"""
+        assert type(page) is int and page > 0
+        assert type(page_size) is int and page_size > 0
+        front, last = index_range(page, page_size)
+        info = self.dataset()
+        if front > len(info):
+            return []
+            return info[front:last]
