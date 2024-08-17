@@ -43,7 +43,6 @@ class Server:
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """hyper data"""
         all_page = len(self.dataset() / page_size)
-        front, last = index_range(page, page_size)
         info = self.get_page(page, page_size)
         task_data = {
             "page_size": page_size if page_size <= len(info) else len(info),
