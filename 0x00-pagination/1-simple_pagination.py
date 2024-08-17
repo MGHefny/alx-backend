@@ -38,4 +38,4 @@ class Server:
         info = self.dataset()
         if front > len(info):
             return []
-            return info[front:last]
+        return info[front:last]
