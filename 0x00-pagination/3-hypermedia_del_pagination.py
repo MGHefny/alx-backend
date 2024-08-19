@@ -62,23 +62,24 @@ class Server:
             "data": p_info,
         }
         return re_info'''
-        assert index is not None and index >= 0, "Index must be non-negative and not None."
-        assert page_size > 0, "Page size must be positive."
-
-        dataset = self.indexed_dataset()
+                dataset = self.indexed_dataset()
+        data_length = len(dataset)
+        assert 0 <= index < data_length
+        response = {}
         data = []
-        current_index = index
-        
-        while len(data) < page_size:
-            if current_index in dataset:
-                data.append(dataset[current_index])
-            current_index += 1
-        
-        next_index = index + page_size
-        
-        return {
-            'index': index,
-            'next_index': next_index,
-            'page_size': page_size,
-            'data': data
-        }
+        response['index'] = index
+        for i in range(page_size):
+            while True:
+                curr = dataset.get(index)
+                index += 1
+                if curr is not None:
+                    break
+            data.append(curr)
+
+        response['data'] = data
+        response['page_size'] = len(data)
+        if dataset.get(index):
+            response['next_index'] = index
+        else:
+            response['next_index'] = None
+        return response
