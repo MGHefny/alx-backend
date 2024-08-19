@@ -48,15 +48,12 @@ class Server:
         c_info = 0
         n_ind = None
         p_info = []
-        while i in info and c_info < page_size:
-            value = info[i]
-            if i >= begin:
-                p_info.append(value)
-                c_info += 1
-                i += 1
+        while len(p_info) < page_size:
+            if begin in info:
+                p_info.append(info[begin])
+                begin += 1
 
-        if c_info == page_size:
-            n_ind = i
+        n_ind = index + page_size
 
         re_info = {
             "index": index,
