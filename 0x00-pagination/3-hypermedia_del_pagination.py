@@ -32,7 +32,7 @@ class Server:
         if self.__indexed_dataset is None:
             dataset = self.dataset()
             truncated_dataset = dataset[:1000]
-            self.__indexed_dataset = {i: truncated_dataset[i] for i in range(len(truncated_dataset))}
+            self.__indexed_dataset = {i: dataset[i] for i in range(len(dataset))}
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> dict:
@@ -62,7 +62,7 @@ class Server:
             "data": p_info,
         }
         return re_info'''
-              assert index is not None and index >= 0, "Index must be non-negative and not None."
+        assert index is not None and index >= 0, "Index must be non-negative and not None."
         assert page_size > 0, "Page size must be positive."
 
         dataset = self.indexed_dataset()
