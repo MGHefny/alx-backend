@@ -43,8 +43,8 @@ class Server:
         n_ind : is the next index
         """
         info = self.indexed_dataset()
-        assert index >= 0 and page_size > 0
-        begin = index or 0
+        assert index >= 0 and page_size
+        begin = index
         c_info = 0
         n_ind = None
         p_info = []
@@ -59,6 +59,6 @@ class Server:
             "index": index,
             "next_index": n_ind,
             "page_size": len(p_info),
-            "data": p_info,
+            "data": p_info
         }
         return re_info
