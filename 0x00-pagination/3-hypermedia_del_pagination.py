@@ -36,7 +36,7 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> Dict:
-        '''"""
+        """
         return info page
         p_ info : is bage info
         c_info : is count the data
@@ -61,25 +61,5 @@ class Server:
             "page_size": len(p_info),
             "data": p_info,
         }
-        return re_info'''
-        dataset = self.indexed_dataset()
-        data_length = len(dataset)
-        assert 0 <= index < data_length
-        response = {}
-        data = []
-        response['index'] = index
-        for i in range(page_size):
-            while True:
-                curr = dataset.get(index)
-                index += 1
-                if curr is not None:
-                    break
-            data.append(curr)
+        return re_info
 
-        response['data'] = data
-        response['page_size'] = len(data)
-        if dataset.get(index):
-            response['next_index'] = index
-        else:
-            response['next_index'] = None
-        return response
