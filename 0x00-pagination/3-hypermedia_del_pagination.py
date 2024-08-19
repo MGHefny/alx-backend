@@ -43,7 +43,7 @@ class Server:
         n_ind : is the next index
         """
         info = self.indexed_dataset()
-        assert index >= 0 and index <= max(info.keys())
+        assert index is not None and index >= 0 and page_size > 0
         begin = index or 0
         c_info = 0
         n_ind = None
