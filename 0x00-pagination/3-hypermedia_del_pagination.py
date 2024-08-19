@@ -36,7 +36,7 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> dict:
-        """
+        '''"""
         return info page
         p_ info : is bage info
         c_info : is count the data
@@ -61,4 +61,24 @@ class Server:
             "page_size": len(p_info),
             "data": p_info,
         }
-        return re_info
+        return re_info'''
+              assert index is not None and index >= 0, "Index must be non-negative and not None."
+        assert page_size > 0, "Page size must be positive."
+
+        dataset = self.indexed_dataset()
+        data = []
+        current_index = index
+        
+        while len(data) < page_size:
+            if current_index in dataset:
+                data.append(dataset[current_index])
+            current_index += 1
+        
+        next_index = index + page_size
+        
+        return {
+            'index': index,
+            'next_index': next_index,
+            'page_size': page_size,
+            'data': data
+        }
