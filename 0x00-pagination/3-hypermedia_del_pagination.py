@@ -43,20 +43,20 @@ class Server:
         n_ind : is the next index
         """
         info = self.indexed_dataset()
-        assert index >= 0 and index <= max(info.keys())
+        assert index is not None and index >= 0 and index <= max(info.keys())
         begin = index or 0
         c_info = 0
         n_ind = None
         p_info = []
-        while x in info and c_info < page_size:
-            value = info[x]
-            if x >= begin:
+        while i in info and c_info < page_size:
+            value = info[i]
+            if i >= begin:
                 p_info.append(value)
                 c_info += 1
-                x += 1
+                i += 1
 
         if c_info == page_size:
-            n_ind = x
+            n_ind = i
 
         re_info = {
             "index": index,
