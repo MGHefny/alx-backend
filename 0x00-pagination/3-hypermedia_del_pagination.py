@@ -62,4 +62,3 @@ class Server:
             "data": p_info,
         }
         return re_info
-
