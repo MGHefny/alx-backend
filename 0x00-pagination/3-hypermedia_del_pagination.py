@@ -3,7 +3,7 @@
 
 import csv
 import math
-from typing import List, Dict
+from typing import Dict, List
 
 
 class Server:
@@ -57,6 +57,6 @@ class Server:
             "index": index,
             "next_index": n_ind,
             "page_size": len(p_info),
-            "data": p_info
+            "data": p_info,
         }
         return re_info
