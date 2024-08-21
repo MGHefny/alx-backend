@@ -21,7 +21,7 @@ class BasicCache(BaseCaching):
         if key not in self.cache_data:
             return None
         return self.cache_data[key]
-"""
+'''
 #!/usr/bin/python3
 
 """ Task 0 """
@@ -45,5 +45,4 @@ class BasicCache(BaseCaching):
         """reseved function"""
         if key not in self.cache_data:
             return None
-        return self.cache_data[key]"""
-        
+        return self.cache_data[key]'''
