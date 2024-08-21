@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 
-""" Task 0 """
 
 from base_caching import BaseCaching
 
