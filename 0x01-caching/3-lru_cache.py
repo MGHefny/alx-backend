@@ -14,7 +14,7 @@ class LRUCache(BaseCaching):
     def put(self, key, item):
         """data post function to cashed item"""
         if key is None or item is None:
-            pass
+            return None
         else:
             data_len = len(self.cache_data)
             if data_len >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
