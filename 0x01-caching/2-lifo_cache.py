@@ -20,7 +20,7 @@ class LIFOCache(BaseCaching):
         """
         data post function to cashed item
         """
-        if key is None or item is None:
+        if key is not None and item is not None:
             return
         else:
             data_len = len(self.cache_data)
