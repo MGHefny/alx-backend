@@ -25,9 +25,9 @@ class LIFOCache(BaseCaching):
         else:
             data_len = len(self.cache_data)
             if data_len >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
-                print("DISCARD: {}".format(self.dic_ordr[-1]))
-                del self.cache_data[self.dic_ordr[-1]]
-                del self.dic_ordr[-1]
+                print("DISCARD: {}".format(self.dic_ordr[0]))
+                del self.cache_data[self.dic_ordr[0]]
+                del self.dic_ordr[0]
             if key in self.dic_ordr:
                 del self.dic_ordr[self.dic_ordr.index(key)]
             self.dic_ordr.append(key)
