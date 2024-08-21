@@ -8,8 +8,8 @@ class LRUCache(BaseCaching):
 
     def __init__(self):
         """Init function"""
-        super().__init__()
         self.dic_ordr = []
+        super().__init__()
 
     def put(self, key, item):
         """data post function to cashed item"""
