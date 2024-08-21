@@ -12,10 +12,13 @@ class BasicCache(BaseCaching):
         super().__init__()
 
     def put(self, key, item):
-        """send function"""
-        if key is not None and item is not None:
-            self.cache_data[key] = item
+        """ send function """
+        if key is None or item is None:
+            return
+        self.cache_data[key] = item
 
     def get(self, key):
         """reseved function"""
-        return self.cache_data.get(key, None)
+        if key not in self.cache_data:
+            return None
+        return self.cache_data[key]
