@@ -14,8 +14,8 @@ class FIFOCache(BaseCaching):
         """
         init function
         """
-        super().__init__()
         self.dic_ordr = []
+        super().__init__()
 
     def put(self, key, item):
         """
