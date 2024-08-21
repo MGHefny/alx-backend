@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-""" Function Task 1 """
+"""function Task 1"""
 from base_caching import BaseCaching
 
 
