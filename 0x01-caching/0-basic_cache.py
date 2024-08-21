@@ -7,6 +7,9 @@ from base_caching import BaseCaching
 
 class BasicCache(BaseCaching):
     """base_cash function"""
+    def __init__(self):
+        """the super call"""
+        super().__init__()
 
     def put(self, key, item):
         """send function"""
