@@ -1,26 +1,19 @@
 #!/usr/bin/env python3
-""" Function Task 2
-"""
+"""Function Task 2"""
 from base_caching import BaseCaching
 
 
 class LIFOCache(BaseCaching):
-    """
-    Lifo function cashed
-    """
+    """Lifo function cashed"""
 
     def __init__(self):
-        """
-        init function
-        """
+        """init function"""
         self.dic_ordr = []
         super().__init__()
 
     def put(self, key, item):
-        """
-        data post function to cashed item
-        """
-        if key is not None and item is not None:
+        """data post function to cashed item"""
+        if key is None or item is None:
             return
         else:
             data_len = len(self.cache_data)
