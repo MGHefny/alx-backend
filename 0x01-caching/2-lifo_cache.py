@@ -21,7 +21,7 @@ class LIFOCache(BaseCaching):
         data post function to cashed item
         """
         if key is None or item is None:
-            pass
+            return
         else:
             data_len = len(self.cache_data)
             if data_len >= BaseCaching.MAX_ITEMS and key not in self.cache_data:
