@@ -1,18 +1,26 @@
 #!/usr/bin/env python3
-"""function Task 1"""
+"""
+function Task 1
+"""
 from base_caching import BaseCaching
 
 
 class FIFOCache(BaseCaching):
-    """fifo cached function"""
+    """
+    fifo cached function
+    """
 
     def __init__(self):
-        """init function"""
+        """
+        init function
+        """
         super().__init__()
         self.dic_ordr = []
 
     def put(self, key, item):
-        """data post function to cashed item"""
+        """
+        data post function to cashed item
+        """
         if key is None or item is None:
             pass
         else:
@@ -25,7 +33,9 @@ class FIFOCache(BaseCaching):
             self.cache_data[key] = item
 
     def get(self, key):
-        """data reseved function from cashed"""
+        """
+        data reseved function from cashed
+        """
         if key is not None:
             return self.cache_data.get(key, None)
         return None
