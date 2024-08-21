@@ -7,6 +7,11 @@ from base_caching import BaseCaching
 class BasicCache(BaseCaching):
     """basw_cash class"""
 
+        def __init__(self):
+        """init fun base"""
+        BaseCaching.__init__(self)
+
+
     def put(self, key, item):
         """Puts item in cache"""
         if key is not None and item is not None:
