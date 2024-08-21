@@ -2,7 +2,6 @@
 """ Function Task 2
 """
 from base_caching import BaseCaching
-from collections import OrderedDict
 
 
 class LIFOCache(BaseCaching):
@@ -14,7 +13,7 @@ class LIFOCache(BaseCaching):
         """
         init function
         """
-        self.dic_ordr = OrderedDict()
+        self.dic_ordr = []
         super().__init__()
 
     def put(self, key, item):
