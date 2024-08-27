@@ -3,6 +3,9 @@
 from flask_babel import Babel
 from flask import Flask, render_template, request
 
+app.config.from_object(Config)
+babel = Babel(app)
+
 
 class Config:
     """ conf flask """
@@ -12,8 +15,6 @@ class Config:
 
 
 app = Flask(__name__)
-app.config.from_object(Config)
-babel = Babel(app)
 
 
 @app.route('/')
