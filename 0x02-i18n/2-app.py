@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ app flask """
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_babel import Babel
 
 
@@ -20,6 +20,7 @@ babel = Babel(app)
 def get_locale():
     """ get local """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
+
 
 @app.route('/')
 def main_index() -> str:
