@@ -5,7 +5,6 @@ from flask import Flask, render_template
 
 
 class Config:
-    """ conf flask """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
     BABEL_DEFAULT_TIMEZONE = "UTC"
@@ -18,6 +17,7 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale() -> str:
+    """ index local website """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
