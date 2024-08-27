@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ app flask """
 from flask_babel import Babel
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 
 
 class Config:
@@ -13,7 +13,6 @@ class Config:
 
 app = Flask(__name__)
 app.config.from_object(Config)
-app.url_map.strict_slashes = False
 babel = Babel(app)
 
 
