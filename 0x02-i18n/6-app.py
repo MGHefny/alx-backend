@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """ app flask Task 3"""
 from flask_babel import Babel
-from typing import Union, Dict
-from flask import Flask, render_template, request, g
+from flask import Flask, request, render_template, g
 
 
 class Config:
@@ -23,7 +22,7 @@ users = {
 }
 
 
-def get_user() -> Union[Dict, None]:
+def get_user():
     """ get user by id """
     login_id = request.args.get('login_as', '')
     if login_id:
