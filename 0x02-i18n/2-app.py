@@ -18,7 +18,7 @@ babel = Babel(app)
 
 @babel.localeselector
 def get_locale() -> str:
-    """ index local """
+    """ index local website """
     return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
@@ -29,4 +29,4 @@ def main_index() -> str:
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
