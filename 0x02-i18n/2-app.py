@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """ app flask """
-from flask import Flask, render_template
 from flask_babel import Babel
+from flask import Flask, render_template, request
 
 
 class Config:
@@ -13,13 +13,14 @@ class Config:
 
 app = Flask(__name__)
 app.config.from_object(Config)
+app.url_map.strict_slashes = False
 babel = Babel(app)
 
 
 @babel.localeselector
 def get_locale() -> str:
-    """ function get local """
-    return request.accept_languages.best_match(app.config['LANGUAGES'])
+    """ index local """
+    return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
 @app.route('/')
