@@ -25,7 +25,6 @@ def main_index() -> str:
 
 @babel.localeselector
 def get_locale() -> str:
-def get_locale() -> str:
     """ web site get locale """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
