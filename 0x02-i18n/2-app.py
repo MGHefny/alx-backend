@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-""" app flask Task 2"""
+""" app flask Task 3"""
+
 from flask_babel import Babel
 from flask import Flask, render_template, request
 
@@ -19,10 +20,11 @@ babel = Babel(app)
 @app.route('/')
 def main_index() -> str:
     """ index page """
-    return render_template('2-index.html')
+    return render_template('3-index.html')
 
 
 @babel.localeselector
+def get_locale() -> str:
 def get_locale() -> str:
     """ web site get locale """
     return request.accept_languages.best_match(app.config['LANGUAGES'])
