@@ -2,7 +2,7 @@
 """ app flask Task 3"""
 
 from flask_babel import Babel
-from flask import Flask, render_template, request
+from flask import Flask, request, render_template
 
 
 class Config:
