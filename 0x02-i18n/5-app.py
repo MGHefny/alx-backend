@@ -23,7 +23,7 @@ users = {
 }
 
 
-def get_user() -> Union[Dict, None]:
+def get_user():
     """ get user by id """
     login_id = request.args.get('login_as')
     if login_id:
