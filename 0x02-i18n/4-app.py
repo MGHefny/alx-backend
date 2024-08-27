@@ -5,7 +5,7 @@ from flask_babel import Babel
 from flask import Flask, render_template, request
 
 
-class Config(object):
+class Config:
     """ conf flask """
     LANGUAGES = ["en", "fr"]
     BABEL_DEFAULT_LOCALE = "en"
@@ -20,7 +20,7 @@ babel = Babel(app)
 @app.route('/')
 def main_index() -> str:
     """ index page """
-    return render_template('4-index.html')
+    return render_template('3-index.html')
 
 
 @babel.localeselector
