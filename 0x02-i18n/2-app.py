@@ -3,8 +3,8 @@
 from flask_babel import Babel
 from flask import Flask, render_template, request
 
-app.config.from_object(Config)
 babel = Babel(app)
+app = Flask(__name__)
 
 
 class Config:
@@ -14,7 +14,7 @@ class Config:
     BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
-app = Flask(__name__)
+app.config.from_object(Config)
 
 
 @app.route('/')
